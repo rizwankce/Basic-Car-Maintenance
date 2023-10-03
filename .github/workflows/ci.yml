@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+
+    runs-on: macos-13
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: "15.0.0"
+    - name: Setup Config file
+      run: |
+        cp Basic-Car-Maintenance.xcconfig.template Basic-Car-Maintenance.xcconfig
+    - name: Run tests
+      run: xcodebuild test -project Basic-Car-Maintenance.xcodeproj -scheme Basic-Car-Maintenance -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0
