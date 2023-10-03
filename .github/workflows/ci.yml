@@ -21,4 +21,4 @@ jobs:
       run: |
         cp Basic-Car-Maintenance.xcconfig.template Basic-Car-Maintenance.xcconfig
     - name: Run tests
-      run: xcodebuild test -project Basic-Car-Maintenance.xcodeproj -scheme Basic-Car-Maintenance -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0
+      run: xcodebuild test -project Basic-Car-Maintenance.xcodeproj -scheme Basic-Car-Maintenance -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
